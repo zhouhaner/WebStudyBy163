@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function.prototype.bind</title>
+    <script>
+        if(!Function.prototype.bind){
+            Function.prototype.bind= function(obj){
+                var self = this;
+                var selfArg = Array.prototype.slice.call(arguments,1);
+                var bridge = function(){};
+                bridge.prototype = self.prototype;
+                var _self = function(){
+                    var newArg = selfArg.concat(Array.prototype.slice.call(arguments));
+                    return self.apply(this instanceof bridge? this : obj||{} , newArg)
+                };
+                _self.prototype = new bridge();
+                return _self;
+            }
+        }
+        function move(x, y) {
+            this.x += x;
+            this.y += y;
+        }
+        var point = {x:1, y:2};
+        var pointmove = move.bind(point, 2, 2);
+        pointmove(); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

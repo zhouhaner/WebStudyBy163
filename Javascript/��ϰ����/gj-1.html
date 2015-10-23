@@ -1,0 +1,41 @@
+<!--//function type(obj) {
+//    if (obj == true || obj == false){
+//        return "Boolean";
+//    } else {
+//    return Object.prototype.toString.call(obj).slice(8,-1).toLowerCase();
+//    };
+//}
+//无法实现布尔型-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>typeof</title>
+    <script>
+        var type= function (a){
+            var t = Object.prototype.toString.call(a);
+            t = t.slice(8,-1);
+            for (var i = 0; i < t.length; i++) 
+            {
+                if (t[i]=="]") {
+                    t= t.slice(0,t.length-1)
+                };
+            };
+            alert(t);
+        };
+        var t = type(1) // t==="number"
+        var t = type(new Number(1)) // t==="number"
+        var t = type("abc") // t==="string"
+        var t = type(new String("abc")) // t==="string"
+        var t = type(true) // t==="boolean"
+        var t = type(undefined) // t==="undefined"
+        var t = type(null) // t==="null"
+        var t = type({}) // t==="object"
+        var t = type([]) // t==="array"
+        var t = type(new Date) // t==="date"
+        var t = type(/\d/) // t==="regexp"
+        var t = type(function(){}) // t==="function"
+
+    </script>
+</head>
+<body>

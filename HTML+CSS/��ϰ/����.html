@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>动画实验</title>
+    <style type="text/css">
+        html,body,pre{margin:0;padding:0;border:0;}
+        body{font:12px/1.14 "Consolas",monospace;color:#333;background:#fff;}
+       .m-demo{position:relative;width:300px;height:300px;margin:100px auto;background:rgba(119,147,36,0.5);}
+        .m-demo pre{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;padding:10px;margin:0;font-size:38px;line-height:1.5;color:#fff;white-space:pre-wrap;word-break:break-all;background:rgba(119,147,36,0.75);}
+
+        .m-demo{width: 600px;height: 600px; outline: 2px dashed; margin: 20px auto; }
+        .m-demo pre{transition: 2s; width: 100px; height: 100px; padding: 0; line-height: 100px; border-radius: 50%; background-color: darkseagreen;text-align: center; font-size: 20px;}
+        .m-demo:hover pre{left: 500px; color: aliceblue; }
+        .m-demo pre:nth-child(1){ transition-timing-function: ease; top:0;}
+        .m-demo pre:nth-child(2){transition-timing-function: ease-in-out; top:150px;}
+        .m-demo pre:nth-child(3){transition-timing-function: cubic-bezier(.42, 0, .58, 1); top:300px;}
+        .m-demo pre:nth-child(4){transition-timing-function: steps(3, strat) top:450px;}
+    </style>
+    </head>
+    
+    <body>
+        <div class="m-demo m-demo-1">
+            <pre>0s</pre>
+            <pre>1s</pre>
+            <pre>2s</pre>
+            <pre>3s</pre>
+        </div>
+    </body>
+</html>

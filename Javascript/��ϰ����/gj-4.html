@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibonacci</title>
+    <script>
+       function fibonacci(n){
+       var sum = 0;
+       var a =0 , b = 1;
+       if (n == 0){
+          return sum=0;
+          } else if(n == 1){
+               return sum=1;
+          } else {
+               for(var i=1;i<n;i++){
+                   b = a + b;
+                   a = b - a;
+          };
+          sum = b;
+       };
+          alert(sum);
+       };
+       for(var n=0; n<20; n++){
+           var num = fibonacci(n);
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

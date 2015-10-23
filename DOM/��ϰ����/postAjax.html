@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>AjaxPost</title>
+        <script type="text/javascript">
+            function post(url, options, callback){
+                var xhr = null;
+                if(window.XMLHttpRequest){
+                    xhr = new XMLHttpRequest();
+                }else if(window.ActiveXObject){
+        //IE低版本不支持XMLHttpRequest
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState==4){
+                        if((xhr.status>=200 && xhr.status<300) || (xhr.status==304)){
+                            callback(xhr.responseText);
+                        }else{
+                            alert('Request was unsuccessful: '+xhr.status);
+                        }
+                    }
+                }
+                xhr.open('post', url, true);
+                xhr.send(serialize(options));
+                //对象转化为查询字符串
+                function serialize(data){
+                    if(!data) return '';
+                    var pairs = [];
+                    for(var name in data){
+                        if(!data.hasOwnProperty(name)) continue;
+                        if(typeof data[name]==='function') continue;
+                        var value = data[name].toString();
+                        name = encodeURIComponent(name);
+                        value = encodeURIComponent(value);
+                        pairs.push(name+'='+value);
+                    }
+                    return pairs.join('&');
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

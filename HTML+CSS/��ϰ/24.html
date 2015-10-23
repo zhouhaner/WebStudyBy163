@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+<title>CSS下拉菜单演示</title> 
+<style type="text/css"> 
+*{margin:0;padding:0;border:0;} 
+body { 
+font-family: 宋体; 
+font-size:12px;
+color: black;
+} 
+#nav { 
+line-height: 24px; list-style-type: none; background:#eee; 
+} 
+#nav-1{
+    border: 1px solid #ddd;
+    width: 50px;
+    height: 28px;
+}
+#nav a { 
+display: block; text-align:center; 
+} 
+#nav a:link { 
+color:#666; text-decoration:none; 
+} 
+#nav a:visited { 
+color:#666;text-decoration:none; 
+} 
+#nav a:hover { 
+color:#FFF;text-decoration:none;font-weight:bold; 
+} 
+#nav li { 
+float: left; width: 80px; background:#ddd; 
+} 
+#nav li a:hover{ 
+background:#999; 
+} 
+#nav li ul { 
+line-height: 27px; list-style-type: none;text-align:left; 
+left: -999em; height: 30px; 
+} 
+#nav li ul li{ 
+float: left; width: 100px; 
+background: #F6F6F6; 
+} 
+#nav li ul a{ wedisplay: block; width: 156px;text-align:left;padding-left:24px; 
+} 
+#nav li ul a:link { 
+color:#666; text-decoration:none; 
+} 
+#nav li ul a:visited { 
+color:#666;text-decoration:none; 
+} 
+#nav li ul a:hover { 
+color:#F3F3F3;text-decoration:none;font-weight:normal; 
+background:#C00; 
+} 
+#nav li:hover ul { 
+left: auto; 
+} 
+#nav li.sfhover ul { 
+left: auto; 
+} 
+#content { 
+clear: left; 
+} 
+
+</style> 
+</head> 
+<body> 
+<ul id="nav"> 
+<li id="nav-1"><a href="#">按钮</a> 
+<ul> 
+<li><a href="#">下拉菜单项</a></li> 
+<li><a href="#">下拉菜单项</a></li> 
+<li><a href="#">下拉菜单项</a></li> 
+<li><a href="#">下拉菜单项</a></li> 
+
+</ul> 
+</li> 
+</ul> 
+</body> 
+</html>

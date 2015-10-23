@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>flex实验</title>
+    <style type="text/css">
+        .container{width: 100%px; height: 150px; background-color: purple; margin 10px;line-height: 10px; border: 5px dashed yellow;}
+        .container{display: flex; justify-content: center; align-items: center;
+        }
+        /*.container1{flex-direction: row-reverse;}*/
+        .container1{flex-wrap: wrap; justify-content:space-between;}
+        /*.container2{flex-direction: column;}*/
+        .container2{flex-wrap: wrap-reverse;}
+        /*.container3{flex-direction: column-reverse;}*/
+        .container3{flex-flow: column row;}
+        .item2{order: 1; flex-grow: 1;}
+        .item1{order: 10; flex-shrink: 1;}
+        .item3{flex-basis: 200px;}
+        .item{width: 50px; height: 20px; background-color: yellowgreen; margin: 10px; text-align: center;}
+    </style>
+</head>
+
+<body>
+    <div class="container container0">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+    <div class="container container1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+    </div>
+    <div class="container container2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+    </div>
+    <div class="container container3">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表格-练习</title>
+</head>
+
+<body>
+<table>
+    <caption>学生信息统计表</caption>
+    <thead><tr><th>姓名</th><th>学号</th><th>家庭地址</th><th>联系方式</th></tr></thead>
+    <tbody>
+        <tr><th>周寒</th><td>201421050509</td><td>四川眉山</td><td>18782947105</td></tr>
+        
+    </tbody>
+    <tfoot>
+        <tr><td colspan="3">成绩优异</td></tr>
+        <tr><td rowspan="10">成绩优异</td></tr>
+    </tfoot>
+    </table>
+<form action="/login" method="post">
+<fieldset>
+  <legend>
+      照片选择
+  </legend>
+  <label for="file">选择照片</label>
+  <input type="file" id="getfile">
+</fieldset>
+<fieldset>
+    <legend>
+        综合设置
+    </legend>
+    <div>选择尺寸：</div>
+    <div>
+        <input class="cb" type="checkbox" name="size" id="cd" value="5" checked><label for="cd">5寸</label>
+        <input class="cb" type="checkbox" name="size" id="cd" value="5"><label for="cd">6寸</label>
+    </div>
+    <div>选择相纸：</div>
+    <div>
+        <input class="cb" type="radio" name="size" id="cd" value="5"><label for="cd">富士</label>
+        <input class="cb" type="radio" name="size" id="cd" value="5"><label for="cd">科达</label>
+    </div>
+    <div>
+        <label for="delivery">配送方式:</label>
+        <select id="delivery">
+            <option value="0">EMS</option>
+            <option value="1">申通</option>
+            <option value="2">韵达</option>
+        </select>
+    </div>
+    <div>
+        <label for="description">商品描述:</label>
+        <input class="de" type="text" name="描述" id="description" placeholder="请输入商品描述">
+    </div>
+    <div>
+        <label for="feedback">意见反馈：</label>
+        <textarea name="feedback" rows="4" id="feedback">
+        </textarea>
+    </div>
+    </fieldset>
+    </hr>
+    <div>
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+    </div>
+    
+</fieldset>
+</form>
+</body>
+</html>

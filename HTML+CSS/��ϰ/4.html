@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>下拉按钮</title>
+  <style>
+      #menu {
+	font-family: 宋体;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+#menu, #menu ul {
+	list-style-type: none;
+	background: #eee;
+	margin: 0;
+	padding: 0;
+}
+anniu{
+    width: 50px;
+    height: 28px;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu li a {
+	display: block;
+    height: 30px;
+    padding-left: 10px; 
+    padding-right: 10px; 
+	color: black;
+	text-decoration: none;
+	border-right: 1px solid #FFF;
+    text-align: center;
+    white-space: nowrap;
+}
+#menu li a:hover {
+	background: #ddd;
+}
+
+#menu li ul li {
+	float: none;
+}
+
+#menu li ul li a {
+	border-top: 1px solid #FFF;
+}
+
+#menu li ul {
+	display: none;
+	position: absolute;
+}
+
+#menu li:hover ul {
+	display: block;
+}
+  </style>
+</head>
+<body>
+    <ul id="menu">
+	<li>
+        <div class="anniu"><a href="#">按钮</a></div>
+		<ul>
+			<li>
+				<a href="#">下拉菜单项</a>
+			</li>
+			<li>
+				<a href="#">下拉菜单项</a>
+			</li>
+			<li>
+				<a href="#">下拉菜单项</a>
+			</li><li>
+				<a href="#">下拉菜单项</a>
+			</li>
+		</ul>
+	</li>
+    </ul>
+</body>
+</html>

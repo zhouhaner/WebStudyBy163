@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myType</title>
+    <script>
+        var myType= function (a){
+            var t = Object.prototype.toString.call(a);
+            t = t.slice(8,-1);
+            for (var i = 0; i < t.length; i++) 
+            {
+                if (t[i]=="]") {
+                    t= t.slice(0,t.length-1)
+                };
+            };
+            alert(t);
+        };
+        var t = myType(1) // t==="number"
+        var t = myType(new Number(1)) // t==="number"
+        var t = myType("abc") // t==="string"
+        var t = myType(new String("abc")) // t==="string"
+        var t = myType(true) // t==="boolean"
+        var t = myType(undefined) // t==="undefined"
+        var t = myType(null) // t==="null"
+        var t = myType({}) // t==="object"
+        var t = myType([]) // t==="array"
+        var t = myType(new Date) // t==="date"
+        var t = myType(/\d/) // t==="regexp"
+        var t = myType(function(){}) // t==="function"
+
+    </script>
+</head>
+<body>
+    </body>
+</html>

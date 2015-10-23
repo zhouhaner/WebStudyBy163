@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>cube of six</title>
+        <style type="text/css">
+            .cube{
+                position: relative;
+                width: 200px;
+                height: 200px;
+                text-align: center;
+                border: 1px solid black;
+                transform-style: preserve-3d;
+            }
+            .cube div{
+                position: absolute;
+                width: 200px;
+                height: 200px;
+            }
+            .wrap{
+                perspective: 800px;
+                perspective-origin: 50% 100px;
+            }
+            
+            span{
+                display: inline;
+                position: relative;
+                top: 45%;
+            }
+            .top:hover{
+                background-color: red;
+            }.bottom:hover{
+                background-color: orange;
+            }.left:hover{
+                background-color: yellow;
+            }.right:hover{
+                background-color: green;
+            }.back:hover{
+                background-color: blue;
+            }.front:hover{
+                background-color: purple;
+            }
+            
+            .back { transform: translateZ(-100px) rotateY(180deg); } 
+            .right { transform: rotateY(-270deg) translateX(100px); transform-origin:top right; } 
+            .left { transform: rotateY(270deg) translateX(-100px); transform-origin: center left; } 
+            .top { transform: rotateX(-90deg) translateY(-100px); transform-origin: top center; } 
+            .bottom { transform: rotateX(90deg) translateY(100px); transform-origin: bottom center; } 
+            .front { transform: translateZ(100px); }
+            
+            @keyframes spin { from { transform: rotateY(0); } to { transform: rotateY(360deg); } } .cube { animation: spin 5s infinite linear; }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+        <div class="cube">
+        <div class="top"><span>top</span></div>
+        <div class="bottom"><span>bottom</span></div>
+        <div class="left"><span>left</span></div>
+        <div class="right"><span>right</span></div>
+        <div class="front"><span>front</span></div>
+        <div class="back"><span>back</span></div>
+        </div>
+        </div>
+    </body>
+</html>

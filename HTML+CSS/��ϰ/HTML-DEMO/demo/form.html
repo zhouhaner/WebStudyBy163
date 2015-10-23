@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>大学生爱好调查</title>
+  <style>
+  body{padding: 50px;}
+  .m-form{min-height:400px;_height:400px;font-size:12px;}
+  .m-form fieldset{margin:10px 0;width:370px;padding:10px;border:1px solid #ffe1a8;background-color:#fffbf2;}
+  .m-form thead th{padding-bottom:5px;font-weight:bold;}
+  .m-form th, .m-form td{padding:2px;vertical-align:top;}
+  .m-form label{margin:0 15px 0 4px;_margin-left:0;}
+  .m-form select{width:100px;}
+  .m-form .txt{width:200px;}
+  .m-form textarea{width:202px;}
+  .m-form .btn{width:75px;height:28px;}
+  .m-form  div{margin:5px 0;}
+  </style>
+</head>
+<body>
+  <form action="/login"  method="post" class="m-form">
+    <fieldset>
+      <div>头像
+      <label for="file">选择照片</label><input type="file" id="file">
+      </div>
+      <div>昵称<input type="text"></div>
+      <div>
+          <lable for="education">学历</label>
+          <select id="education">
+              <option value="0" selected>大专</option>
+              <option value="1">本科</option>
+          </select>
+      </div>
+      <div>
+          性别
+          <input name="gender" type="radio" class="cz" id="cz_0" value="man" checked>
+              <label for="cz_0">男</label>
+          <input class="cz" type="radio" name="gender" id="cz_1" value="women">
+              <label for="cz_0">女</label>
+      </div>
+      
+      <div>
+        爱好
+        <input class="rd" type="checkbox" name="material" id="rd_0" value="movie" checked><label for="rd_0" >电影</label>
+        <input class="rd" type="checkbox" name="material" id="rd_1" value="photo"><label for="rd_1" >摄影</label>
+        <input class="rd" type="checkbox" name="material" id="rd_0" value="music"><label for="rd_2" >音乐</label>
+        <input class="rd" type="checkbox" name="material" id="rd_1" value="reading" checked><label for="rd_3" >阅读</label>
+      </div>
+      <div>
+        <label for="sign">签名：</label>
+        <textarea name="sign" rows="4" id="feedback"></textarea>
+      </div>
+    </fieldset>
+    <div>
+      <button type="button">保存</button>
+    </div>
+  </form>
+</body>
+</html>

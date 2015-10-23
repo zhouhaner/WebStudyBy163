@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object.create()</title>
+    <script>
+       Object.prototype.create = function(obj) {  
+           if(Object.prototype.create){  
+               return Object.prototype.create //特性检测，判断浏览器是否兼容  
+           }else{
+               function F(){F.prototype = obj; //以传入参数为原型构造对象  
+                            return new F(); 
+                           } 
+           }  
+       };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

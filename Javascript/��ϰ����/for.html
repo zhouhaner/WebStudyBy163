@@ -1,0 +1,37 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>for,forin语句</title>
+    </head>
+    
+    <body>
+        
+        <script>
+            for(var i = 1; i <=10; i++){
+                if(i == 5){break;}
+                document.write(i);  
+            }
+            
+            var kitty = {
+                age : 1,
+                name : kitty,
+                mew:function(){
+                    console.log('喵喵喵');
+                }
+                /*friend :{
+                    name :'snoopy',
+                    age : 2 ,
+                }*/
+                
+            }
+            
+            for(var p in kitty){
+                document.write(p + ' ')
+            }
+            
+                
+       
+        </script>
+    </body>
+</html>

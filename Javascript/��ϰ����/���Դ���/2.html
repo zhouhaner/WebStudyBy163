@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+    <script>
+        //题目告知为一排序好的数组，因此，考虑使用二分法查找，恰好，算法的时间复杂度为O(n)；
+        function search(obj,value){
+            this.obj = obj;
+            var starIndex = 0, stopIndex = obj.length - 1, midIndex = Math.floor((starIndex + stopIndex)/2);//定义查找索引
+            while(obj[midIndex] != value && starIndex < stopIndex){
+                if(value<obj[midIndex]){
+                    stopIndex = midIndex - 1;
+                } else if(value > obj[midIndex]){
+                    starIndex = midIndex + 1;
+                }
+                midIndex = Math.floor((starIndex + starIndex)/2);
+            }; //开始查找
+            if(obj[midIndex] != value){
+                return -1;
+            } else {
+                return midIndex;
+            } //返回索引，如果没找到，返回-1
+        }
+        //测试
+        var arr = [1, 2, 4, 6, 7, 9, 19,20, 30, 40, 45, 47];
+	    var a = search(arr, 2);
+	    var b = search(arr, 30);
+	    var c = search(arr, 24);
+	    var d = search(arr, 50);
+	    var e = search(arr, 7);
+        alert(a);
+        alert(b);
+        alert(c);
+        alert(d);
+        alert(e);
+    </script>
+</head>
+<body>
+    </body>
+</html>

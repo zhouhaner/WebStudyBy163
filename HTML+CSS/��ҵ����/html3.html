@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>大学生爱好调查</title>
+  <style>
+      /*body{width: 500px; height: 150px;}*/
+      .img{width: 100%px; height: auto; margin: 10px;}
+      .name{width: 100%px; height: auto; margin: 10px;}
+      .school{width: 100%px; height: auto; margin: 10px;}
+      .sex{width: 100%px; height: auto; margin: 10px;}
+      .hobbit-a{width: 100%px; height: auto; margin: 10px;}
+      .img{width: 100%px; height: auto; margin: 10px;}
+      .signtext{width: 500px;height: 100px;margin: 10px;}
+      
+      .photo{width:10px; height:10px; padding:10px;}
+      .nickname{width:10px; height:10px; padding: 10px;}
+      .edu{width:10px; height:10px; padding: 10px;}
+      .gender{width:10px; height:10px; padding: 10px;}
+      .hobbit{width:10px; height:10px; padding: 10px;}
+      
+      .signup{width:10px; height:50px; padding: 10px; position:relative; top: -50px;}
+      .save{width:50px; height:20px;
+          background-color: purple;
+          position: absolute;
+          left: 92px;
+          top: 250px;
+      }
+  
+  </style>
+</head>
+<body>
+  <form action="/login"  method="post" enctype="multipart/form-data" class="m-form">
+    <fieldset>
+      <div class="img">
+      <span class="photo">头像</span><label for="file"></label><input type="file" id="file">
+      </div>
+      <div class="name">
+      <span class="nickname">昵称</span><input type="text" id="nickname">
+      </div>
+      <div class="school">
+          <lable for="education"><span class="edu">学历</span></label>
+          <select id="education" class="slelect">
+              <option value="0" selected>大专</option>
+              <option value="1">本科</option>
+          </select>
+      </div>
+      <div class="sex">
+          <span class="gender">性别</span>
+          <input name="gender" type="radio" class="cz" id="cz_0" value="man" checked>
+              <label for="cz_0">男</label>
+          <input class="cz" type="radio" name="gender" id="cz_1" value="women">
+              <label for="cz_0">女</label>
+      </div>
+      
+      <div class="hobbit-a">
+        <span class="hobbit">爱好</span>
+        <input class="hb1" type="checkbox" name="material" id="hd_1" value="movie" checked><label for="hd_1" >电影</label>
+        <input class="hb2" type="checkbox" name="material" id="hd_2" value="photo"><label for="hd_2" >摄影</label>
+        <input class="hb3" type="checkbox" name="material" id="hd_3" value="music"><label for="hd_3" >音乐</label>
+        <input class="hb4" type="checkbox" name="material" id="hd_4" value="reading" checked><label for="hd_4" >阅读</label>
+      </div>
+      <div class="signtext">
+        <label for="sign"><span class="signup">签名</span></label>
+        <textarea name="sign" rows="4" id="feedback"></textarea>
+          <div><button type="button" class="save">保存</button></div> 
+      </div>
+    </fieldset>  
+  </form>
+</body>
+</html>

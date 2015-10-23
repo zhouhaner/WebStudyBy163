@@ -1,0 +1,86 @@
+<!doctype html>
+<head>
+    <title>tab效果</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        html,body,ul,li,p {
+    margin: 0; 
+    padding: 0;
+}
+ul,li {
+    list-style: none;
+}
+html {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color:#999;
+}
+/*清除浮动*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.clearfix {
+    zoom:1;
+}
+/*tab样式*/
+.tab {
+    width: 574px;
+    border: 1px solid #999;
+    line-height: 30px;
+    margin: 20px;
+    overflow: hidden;
+}
+    .menu {
+        width:1000px;
+    }
+    .menu li {
+        width:191.33333333333px;
+        float:left;
+        border: 1px solid #cecece;
+        margin-left: -1px;
+        background-color: #f1f1f1;
+        text-align: center;
+    }
+    .menu li:first-child {
+        margin-left:0;
+    }
+    .menu li.cur {
+        position: relative;
+        border: 1px solid #cecece;
+        border-bottom: #fff;
+        background: #fff;
+    }
+    .content {
+        min-height: 100px;
+        border: 1px solid #cecece;
+        border-top: none;
+        margin-top: -2px;
+    }
+    .content p {
+        display: none;
+        padding: 20px;
+    }
+    .content p.cur {
+        display: block;
+    }
+    </style>
+</head>
+<div class="tab">
+    <ul class="menu clearfix">
+        <li class="cur">课程</li>
+        <li>学习计划</li>
+        <li>技能图谱</li>
+    </ul>
+    <div class="content">
+        <p class="cur">课程内容</p>
+        <p>学习计划</p>
+        <p>技能图谱</p>
+    </div>
+</div>
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax-get</title>
+<script>
+//Ajax请求GET方法的封装
+function get(url, options, callback){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4){
+            if((xhr.status>=200 && xhr.status<300) || (xhr.status==304)){
+                callback(xhr.responseText);
+            }else{
+                alert('Request was unsuccessful: '+xhr.status);
+            }
+        }
+    }
+    //弹出url和查询字符窜
+    alert(url+'?'+serialize(options));
+    xhr.open('get', url+'?'+serialize(options), true);
+    xhr.send(null);
+ 
+    //对象转化为查询字符串
+    function serialize(data){
+        if(!data) return '';
+        var pairs = [];
+        for(var name in data){
+            if(!data.hasOwnProperty(name)) continue;
+            if(typeof data[name]==='function') continue;
+            var value = data[name].toString();
+            name = encodeURIComponent(name);
+            value = encodeURIComponent(value);
+            pairs.push(name+'='+value);
+        }
+        return pairs.join('&');
+    }
+}
+ 
+ 
+window.onload=function ()
+{
+    var oBtn=document.getElementById('btn1');
+     
+    oBtn.onclick=function ()
+    {   
+        var options = {};
+        options.time = new Date().getTime();
+        //Ajax请求获得同一路径下的data.txt，并弹出文件内容
+        get('data.txt',options,function(data){
+            alert(data);
+        });
+    };
+};
+</script>
+</head>
+ 
+<body>
+<input id="btn1" type="button" value="Ajax请求" />
+</ul>
+</body>
+</html>
